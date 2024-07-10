@@ -37,6 +37,7 @@ CHECKPOINT_MODELS=(
 
 LORA_MODELS=(
     #"https://civitai.com/api/download/models/16576"
+    
 )
 
 VAE_MODELS=(
@@ -66,8 +67,8 @@ IPADAPTER_MODELS=(
 )
 
 CLIPVISION_MODELS=(
-
-
+    "https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+    "https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors"  
 )
 
 CONTROLNET_MODELS=(
@@ -91,6 +92,7 @@ CONTROLNET_MODELS=(
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
+
 
 function provisioning_start() {
     DISK_GB_AVAILABLE=$(($(df --output=avail -m "${WORKSPACE}" | tail -n1) / 1000))
@@ -121,6 +123,10 @@ function provisioning_start() {
         "${WORKSPACE}/storage/stable_diffusion/models/clip_vision" \
         "${CLIPVISION_MODELS[@]}"
     provisioning_print_end
+}
+
+function provisioning_download() {
+    wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" -O "$2/${1##*/}" "$1"
 }
 
 function provisioning_get_nodes() {
