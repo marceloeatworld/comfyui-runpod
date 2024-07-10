@@ -15,7 +15,9 @@ PYTHON_PACKAGES=(
 
 NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager"
+    "https://github.com/cubiq/ComfyUI_essentials"
     "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
+    "https://github.com/cubiq/ComfyUI_FaceAnalysis"
     "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
     "https://github.com/xiaoxiaodesha/hd_node"
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
@@ -26,11 +28,16 @@ NODES=(
     "https://github.com/chrisgoringe/cg-use-everywhere"
     "https://github.com/Fannovel16/comfyui_controlnet_aux"
     "https://github.com/rgthree/rgthree-comfy"
+    "https://github.com/sipherxyz/comfyui-art-venture"
+    "https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes"
+
     
 )
 
 CHECKPOINT_MODELS=(
     "https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt"
+    "https://civitai.com/api/download/models/351306 dreamshaperXL_v21TurboDPMSDE.safetensors"
+    "https://civitai.com/api/download/models/361593 realvisxlV40_v40LightningBakedvae.safetensors"
     #"https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.ckpt"
     #"https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors"
     #"https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors"
@@ -80,6 +87,7 @@ CONTROLNET_MODELS=(
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_mlsd-fp16.safetensors"
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_normal-fp16.safetensors"
     "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_openpose-fp16.safetensors"
+    "https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/raw/main/OpenPoseXL2.safetensors"
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_scribble-fp16.safetensors"
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_seg-fp16.safetensors"
     "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_canny-fp16.safetensors"
