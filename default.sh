@@ -9,6 +9,7 @@
 PYTHON_PACKAGES=(
     #"opencv-python==4.7.0.72"
     "insightface==0.7.3"
+    "dlib==19.24.4"
 
 )
 
