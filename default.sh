@@ -32,6 +32,16 @@ NODES=(
     "https://github.com/sipherxyz/comfyui-art-venture"
     "https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes"
     "https://github.com/TemryL/ComfyUI-IDM-VTON"
+    "https://github.com/shadowcz007/comfyui-mixlab-nodes"
+    "https://github.com/giriss/comfy-image-saver"
+    "https://github.com/Acly/comfyui-inpaint-nodes"
+    "https://github.com/Fannovel16/comfyui_controlnet_aux"
+    "https://github.com/ZHO-ZHO-ZHO/ComfyUI-YoloWorld-EfficientSAM"
+    "https://github.com/kijai/ComfyUI-SUPIR"
+    "https://github.com/kijai/ComfyUI-KJNodes"
+    "https://github.com/shadowcz007/comfyui-mixlab-nodes"
+    "https://github.com/WASasquatch/was-node-suite-comfyui"
+    "https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes"
     
 )
 
