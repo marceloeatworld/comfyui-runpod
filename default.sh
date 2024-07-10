@@ -8,10 +8,20 @@
 
 PYTHON_PACKAGES=(
     #"opencv-python==4.7.0.72"
+    "insightface==0.7.3"
+
 )
 
 NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager"
+    "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
+    "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
+    "https://github.com/xiaoxiaodesha/hd_node"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    "https://github.com/storyicon/comfyui_segment_anything"
+    "https://github.com/da2el-ai/ComfyUI-d2-steps"
+    "https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
+    
 )
 
 CHECKPOINT_MODELS=(
