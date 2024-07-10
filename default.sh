@@ -5,6 +5,7 @@
 # https://raw.githubusercontent.com/ai-dock/comfyui/main/config/provisioning/default.sh
 
 # Packages are installed after nodes so we can fix them...
+apt install -y cmake
 
 PYTHON_PACKAGES=(
     #"opencv-python==4.7.0.72"
