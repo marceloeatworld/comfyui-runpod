@@ -19,19 +19,19 @@ NODES=(
     "https://github.com/cubiq/ComfyUI_essentials"
     "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
     "https://github.com/cubiq/ComfyUI_FaceAnalysis"
+    "https://github.com/cubiq/ComfyUI_InstantID"
     "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
     "https://github.com/xiaoxiaodesha/hd_node"
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
     "https://github.com/storyicon/comfyui_segment_anything"
     "https://github.com/da2el-ai/ComfyUI-d2-steps"
     "https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
-    "https://github.com/TemryL/ComfyUI-IDM-VTON"
     "https://github.com/chrisgoringe/cg-use-everywhere"
     "https://github.com/Fannovel16/comfyui_controlnet_aux"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/sipherxyz/comfyui-art-venture"
     "https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes"
-
+    "https://github.com/TemryL/ComfyUI-IDM-VTON"
     
 )
 
