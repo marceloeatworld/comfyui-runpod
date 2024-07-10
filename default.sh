@@ -125,9 +125,6 @@ function provisioning_start() {
     provisioning_print_end
 }
 
-function provisioning_download() {
-    wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" -O "$2/${1##*/}" "$1"
-}
 
 function provisioning_get_nodes() {
     for repo in "${NODES[@]}"; do
@@ -191,7 +188,8 @@ function provisioning_print_end() {
 
 # Download from $1 URL to $2 file path
 function provisioning_download() {
-    wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
+    wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" -O "$2/${1##*/}" "$1"
 }
+
 
 provisioning_start
