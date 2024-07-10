@@ -2,7 +2,7 @@ import os.path
 from huggingface_hub import snapshot_download
 
 CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
-WEIGHTS_PATH = os.path.join(CURRENT_PATH, "/workspace/storage/stable_diffusion/models/ckpt")
+WEIGHTS_PATH = os.path.join(CURRENT_PATH, "/workspace/ComfyUI/models")
 HF_REPO_ID = "yisol/IDM-VTON"
 
 if __name__ == "__main__":
