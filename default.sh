@@ -23,7 +23,7 @@ NODES=(
     "https://github.com/da2el-ai/ComfyUI-d2-steps"
     "https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
     "https://github.com/TemryL/ComfyUI-IDM-VTON"
-    "https://github.com/ArtVentureX/comfyui-animatediff"
+    "https://github.com/chrisgoringe/cg-use-everywhere"
     
 )
 
