@@ -39,7 +39,7 @@ NODES=(
     "https://github.com/ZHO-ZHO-ZHO/ComfyUI-YoloWorld-EfficientSAM"
     "https://github.com/kijai/ComfyUI-SUPIR"
     "https://github.com/kijai/ComfyUI-KJNodes"
-    "https://github.com/shadowcz007/comfyui-mixlab-nodes"
+    #"https://github.com/shadowcz007/comfyui-mixlab-nodes"
     "https://github.com/WASasquatch/was-node-suite-comfyui"
     "https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes"
     
