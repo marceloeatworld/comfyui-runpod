@@ -8,10 +8,11 @@
 apt install -y cmake
 
 PYTHON_PACKAGES=(
+    "cmake==3.30.0"
     #"opencv-python==4.7.0.72"
     #"insightface==0.7.3"
     #"dlib==19.24.4"
-
+    
 )
 
 NODES=(
