@@ -30,7 +30,7 @@ NODES=(
     "https://github.com/Fannovel16/comfyui_controlnet_aux"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/sipherxyz/comfyui-art-venture"
-    "https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes"
+    #"https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes"
     "https://github.com/TemryL/ComfyUI-IDM-VTON"
     "https://github.com/giriss/comfy-image-saver"
     "https://github.com/Acly/comfyui-inpaint-nodes"
@@ -39,7 +39,7 @@ NODES=(
     "https://github.com/kijai/ComfyUI-KJNodes"
     #"https://github.com/shadowcz007/comfyui-mixlab-nodes"
     "https://github.com/WASasquatch/was-node-suite-comfyui"
-    "https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
+    #"https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
     
 )
 
