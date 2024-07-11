@@ -10,14 +10,13 @@ apt install -y cmake
 PYTHON_PACKAGES=(
     "cmake==3.30.0"
     #"opencv-python==4.7.0.72"
-    #"insightface==0.7.3"
-    #"dlib==19.24.4"
+    "insightface==0.7.3"
+    "dlib==19.24.4"
     
 )
 
 NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager"
-    "https://github.com/cubiq/ComfyUI_essentials"
     "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
     "https://github.com/cubiq/ComfyUI_FaceAnalysis"
     "https://github.com/cubiq/ComfyUI_InstantID"
@@ -35,10 +34,11 @@ NODES=(
     "https://github.com/giriss/comfy-image-saver"
     "https://github.com/Acly/comfyui-inpaint-nodes"
     "https://github.com/ZHO-ZHO-ZHO/ComfyUI-YoloWorld-EfficientSAM"
-    "https://github.com/kijai/ComfyUI-SUPIR"
-    "https://github.com/kijai/ComfyUI-KJNodes"
+    "https://github.com/cubiq/ComfyUI_essentials"
+    #"https://github.com/kijai/ComfyUI-SUPIR"
+    #"https://github.com/kijai/ComfyUI-KJNodes"
     #"https://github.com/shadowcz007/comfyui-mixlab-nodes"
-    "https://github.com/WASasquatch/was-node-suite-comfyui"
+    #"https://github.com/WASasquatch/was-node-suite-comfyui"
     #"https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
     
 )
