@@ -35,9 +35,6 @@ NODES=(
     "https://github.com/Acly/comfyui-inpaint-nodes"
     "https://github.com/ZHO-ZHO-ZHO/ComfyUI-YoloWorld-EfficientSAM"
     "https://github.com/cubiq/ComfyUI_essentials"
-    "https://github.com/kijai/ComfyUI-SUPIR"
-    "https://github.com/kijai/ComfyUI-KJNodes"
-    "https://github.com/WASasquatch/was-node-suite-comfyui"
 )
 
 CHECKPOINT_MODELS=(
