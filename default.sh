@@ -23,6 +23,7 @@ NODES=(
     "https://github.com/xiaoxiaodesha/hd_node"
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
     "https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
+    "https://github.com/cubiq/ComfyUI_essentials"
     "https://github.com/storyicon/comfyui_segment_anything"
     "https://github.com/da2el-ai/ComfyUI-d2-steps"
     "https://github.com/chrisgoringe/cg-use-everywhere"
@@ -34,8 +35,7 @@ NODES=(
     "https://github.com/giriss/comfy-image-saver"
     "https://github.com/Acly/comfyui-inpaint-nodes"
     "https://github.com/ZHO-ZHO-ZHO/ComfyUI-YoloWorld-EfficientSAM"
-    "https://github.com/cubiq/ComfyUI_essentials"
-    "https://github.com/Fannovel16/comfyui_controlnet_aux"
+
 )
 
 CHECKPOINT_MODELS=(
