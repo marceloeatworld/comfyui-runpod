@@ -199,9 +199,20 @@ function provisioning_print_end() {
 }
 
 function provisioning_download() {
-    IFS=' ' read -r url filename <<< "$1"
-    wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" -O "$2/$filename" "$url"
+    local url="$1"
+    local dir="$2"
+    local dotbytes="${3:-4M}"
+    
+    # Split the input into URL and filename (if provided)
+    IFS=' ' read -r download_url filename <<< "$url"
+    
+    if [ -z "$filename" ]; then
+        # If no filename is provided, let wget decide the filename
+        wget -qnc --content-disposition --show-progress -e dotbytes="$dotbytes" -P "$dir" "$download_url"
+    else
+        # If a filename is provided, use it
+        wget -qnc --content-disposition --show-progress -e dotbytes="$dotbytes" -P "$dir" -O "$dir/$filename" "$download_url"
+    fi
 }
-
 
 provisioning_start
