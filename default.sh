@@ -137,8 +137,26 @@ function provisioning_start() {
     provisioning_print_end
 }
 
+function install_node() {
+    local repo="$1"
+    local dir="${repo##*/}"
+    local path="/opt/ComfyUI/custom_nodes/${dir}"
+    local requirements="${path}/requirements.txt"
+
+    printf "Installing node: %s...\n" "${repo}"
+    if git clone "${repo}" "${path}" --recursive; then
+        if [[ -e $requirements ]]; then
+            micromamba -n comfyui run ${PIP_INSTALL} -r "${requirements}"
+        fi
+        return 0
+    else
+        printf "Failed to install node: %s\n" "${repo}"
+        return 1
+    fi
+}
 
 function provisioning_get_nodes() {
+    local failed_nodes=()
     for repo in "${NODES[@]}"; do
         dir="${repo##*/}"
         path="/opt/ComfyUI/custom_nodes/${dir}"
@@ -152,13 +170,33 @@ function provisioning_get_nodes() {
                 fi
             fi
         else
-            printf "Downloading node: %s...\n" "${repo}"
-            git clone "${repo}" "${path}" --recursive
-            if [[ -e $requirements ]]; then
-                micromamba -n comfyui run ${PIP_INSTALL} -r "${requirements}"
+            if ! install_node "$repo"; then
+                failed_nodes+=("$repo")
             fi
         fi
     done
+
+    # Retry failed installations
+    if [ ${#failed_nodes[@]} -gt 0 ]; then
+        printf "Retrying installation for failed nodes...\n"
+        local retry_failed_nodes=()
+        for repo in "${failed_nodes[@]}"; do
+            if ! install_node "$repo"; then
+                retry_failed_nodes+=("$repo")
+            fi
+        done
+        failed_nodes=("${retry_failed_nodes[@]}")
+    fi
+
+    # Final verification
+    if [ ${#failed_nodes[@]} -eq 0 ]; then
+        printf "All nodes were successfully installed.\n"
+    else
+        printf "The following nodes failed to install after retry:\n"
+        for node in "${failed_nodes[@]}"; do
+            printf "  - %s\n" "$node"
+        done
+    fi
 }
 
 function provisioning_install_python_packages() {
