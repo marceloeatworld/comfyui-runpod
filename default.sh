@@ -127,27 +127,31 @@ function provisioning_start() {
     provisioning_print_header
     provisioning_get_nodes
     provisioning_install_python_packages
-    provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/ckpt" \
-        "${CHECKPOINT_MODELS[@]}"
-    provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/lora" \
-        "${LORA_MODELS[@]}"
-    provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/controlnet" \
-        "${CONTROLNET_MODELS[@]}"
-    provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/vae" \
-        "${VAE_MODELS[@]}"
-    provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/esrgan" \
-        "${ESRGAN_MODELS[@]}"
-    provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/ipadapter" \
-        "${IPADAPTER_MODELS[@]}"
-    provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/clip_vision" \
-        "${CLIPVISION_MODELS[@]}"
+    if [ ${#failed_nodes[@]} -eq 0 ]; then
+        provisioning_get_models \
+            "${WORKSPACE}/storage/stable_diffusion/models/ckpt" \
+            "${CHECKPOINT_MODELS[@]}"
+        provisioning_get_models \
+            "${WORKSPACE}/storage/stable_diffusion/models/lora" \
+            "${LORA_MODELS[@]}"
+        provisioning_get_models \
+            "${WORKSPACE}/storage/stable_diffusion/models/controlnet" \
+            "${CONTROLNET_MODELS[@]}"
+        provisioning_get_models \
+            "${WORKSPACE}/storage/stable_diffusion/models/vae" \
+            "${VAE_MODELS[@]}"
+        provisioning_get_models \
+            "${WORKSPACE}/storage/stable_diffusion/models/esrgan" \
+            "${ESRGAN_MODELS[@]}"
+        provisioning_get_models \
+            "${WORKSPACE}/storage/stable_diffusion/models/ipadapter" \
+            "${IPADAPTER_MODELS[@]}"
+        provisioning_get_models \
+            "${WORKSPACE}/storage/stable_diffusion/models/clip_vision" \
+            "${CLIPVISION_MODELS[@]}"
+    else
+        printf "Skipping model downloads due to failed node installations.\n"
+    fi
     provisioning_print_end
 }
 
@@ -160,7 +164,13 @@ function install_node() {
     printf "Installing node: %s...\n" "${repo}"
     if git clone "${repo}" "${path}" --recursive; then
         if [[ -e $requirements ]]; then
-            micromamba -n comfyui run ${PIP_INSTALL} -r "${requirements}"
+            printf "Installing requirements for node %s...\n" "${repo}"
+            if micromamba -n comfyui run ${PIP_INSTALL} -r "${requirements}"; then
+                printf "Requirements installed successfully for node %s.\n" "${repo}"
+            else
+                printf "Failed to install requirements for node %s.\n" "${repo}"
+                return 1
+            fi
         fi
         return 0
     else
@@ -215,9 +225,15 @@ function provisioning_get_nodes() {
 
 function provisioning_install_python_packages() {
     if [ ${#PYTHON_PACKAGES[@]} -gt 0 ]; then
-        micromamba -n comfyui run ${PIP_INSTALL} ${PYTHON_PACKAGES[*]}
+        printf "Installing global Python packages...\n"
+        if micromamba -n comfyui run ${PIP_INSTALL} ${PYTHON_PACKAGES[*]}; then
+            printf "Global Python packages installed successfully.\n"
+        else
+            printf "Failed to install global Python packages.\n"
+        fi
     fi
 }
+
 
 function provisioning_get_models() {
     if [[ -z $2 ]]; then return 1; fi
