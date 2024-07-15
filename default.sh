@@ -11,6 +11,7 @@ PYTHON_PACKAGES=(
     "cmake==3.30.0"
     "insightface==0.7.3"
     "dlib==19.24.4"
+    "spandrel==0.3.4"
     
 )
 
