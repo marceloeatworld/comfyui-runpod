@@ -12,7 +12,7 @@ PYTHON_PACKAGES=(
     "insightface==0.7.3"
     "dlib==19.24.4"
     "spandrel==0.3.4"
-    "pyopenssl >= 23.2.0"
+    "pyopenssl==24.1.0"
     
 )
 
