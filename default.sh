@@ -233,9 +233,17 @@ function provisioning_get_models() {
     
     printf "Downloading %s model(s) to %s...\n" "${#arr[@]}" "$dir"
     for url in "${arr[@]}"; do
-        printf "Downloading: %s\n" "${url}"
-        provisioning_download "${url}" "${dir}"
-        printf "\n"
+        # Extract the filename from the URL
+        filename=$(basename "$url")
+        
+        # Check if the file already exists
+        if [[ -f "$dir/$filename" ]]; then
+            printf "Model %s already exists, skipping download.\n" "$filename"
+        else
+            printf "Downloading: %s\n" "${url}"
+            provisioning_download "${url}" "${dir}"
+            printf "\n"
+        fi
     done
 }
 
