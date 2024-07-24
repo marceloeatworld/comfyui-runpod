@@ -45,6 +45,7 @@ CHECKPOINT_MODELS=(
     "https://civitai.com/api/download/models/351306 dreamshaperXL_v21TurboDPMSDE.safetensors"
     "https://civitai.com/api/download/models/361593 realvisxlV40_v40LightningBakedvae.safetensors"
     "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors"
+    "https://civitai.com/api/download/models/329420 albedobaseXL_v21.safetensors"
 
 )
 
